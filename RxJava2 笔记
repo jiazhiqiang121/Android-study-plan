@@ -1,0 +1,29 @@
+特别提示：RxJava2不再支持在发射事件传入null值，会产生nullPointerException. 意味着Observable<Void>不再发射任何值，
+而是正常结束或抛出空指针。
+
+1.Observeable ——>subscribe()订阅——>Observer [不支持背压]
+    Flowable —— >subscribe()订阅— — >Subscriber[支持背压]
+
+2.订阅
+Consumer 消费者，用于接收单个值
+BiConsumer 消费者，用户接收两个值
+Function 用户变换对象
+Predicate 用于判断
+
+3.内置线程
+Schedulers.io() io线程，通常用于网络，读写文件等io 密集型的操作
+Schedulers.computation() 计算密集型操作
+Schedulers.newThread() 常规新线程
+Schedulers.mainThread() Android主线程
+
+4.Disposable 相当于RxJava1的Subscription 用于解除订阅
+
+5.背压：
+在异步场景中，被观察者发送事件的速度远大于观察者的处理速度的情况下，一种告诉被观察者降低发送速度的策略。
+
+
+
+
+
+
+
