@@ -1,0 +1,21 @@
+1. map  操作符可以将一个 Observable 对象通过某种关系转换为另一个Observable 对象。
+2.concat 可以做到不交错的发射两个甚至多个 Observable 的发射事件，并且只有前一个 Observable 终止(onComplete) 后才会订阅下一个 Observable。
+3.flatMap 多个网络请求依次依赖
+4.zip 多个接口 数据共同更新UI
+5.interval 心跳间隔人物
+6.Single只能发送一个事件和Observeable接受可变参数完全不同；
+Completable侧重于观察结果；
+Maybe是两种结合体。
+7.Function替换Func1, BiFunction 替换了Func2…N 
+8.Consumer替换Action1, BiConsumer 替换了Action2…N 
+9.onErrorReturn 当发生错误时，发射一个默认值然后结束数据流，所以Subscriber看不到异常信息，看到的是正常的数据流结束状态。
+10.onErrorResumeNext:当错误发生时，使用另外一个数据流继续发射数据。在返回的Observable中看不到错误信息的。
+11.onExceptionResumeNext 和onErrorResumeNext区别是只捕获Exception。
+12.retry 如果发生了不定性的异常，通常会重试一下看看是否正常。retry的功能就算重新订阅到事件流，并重头开始发射数据。
+13.retryWhen 
+如果返回的Observable 发射了一个数据，retryWhen将会执行重试操作。
+如果返回的Observable 发射了一个错误信息，retryWhen将会发射一个错误并不会重试。
+如果返回的Observable正常结束了，retryWhen也正常结束。
+14.using 操作函数是用来管理资源的，如果一个Observable需要使用一个资源来发射数据，当Observable结束时候就释放该资源。
+当using有三个参数。当Observable被订阅的时候，resourceFactory用来获取到需要的资源；observableFactory用这个来发射数据；当Observable完成的时候，disposeAction来释放资源。
+
