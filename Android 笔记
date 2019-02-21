@@ -1,0 +1,6 @@
+CoordinatorLayout（协调布局）：协调内部的各个子控件进行交互，通过设置子控件的behavior来操控子控件的一些操作和动画，5.0系统引进的Material Design其中的一种新型控件
+顺便提一下MD还有哪些新的控件和变化：
+MD动画和activity转场动画，调色板Palette，RecyclerView，CardView，Toolbar，TextInputLayout，FloatingActionButton，SnackBar，NavigationView，DrawerLayout，TabLayout，CoordinatorLayout，CollapsingToolbarLayout等等
+ConstraintLayout（约束布局）：新出的一种布局方式，有望取代其他布局
+建议参考文章：http://www.jianshu.com/p/f61227a2775f
+PercentRelativeLayout、PercentFrameLayout（百分百布局）按照父布局的宽高进行百分比分隔
