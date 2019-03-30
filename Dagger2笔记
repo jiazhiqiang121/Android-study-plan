@@ -1,0 +1,49 @@
+Dagger2依赖注入框架，对象的管理，目的是降低程序耦合。模块化解耦。
+Dagger2可以将MVP中的V与P层进一步解耦，这样可以提高代码的健壮性和可维护性。
+
+@Module　
+	专门提供依赖，所以我们定义一个类用＠Module注解，这样Dagger再构造类的实例的时候，
+就知道从哪里找到需要的依赖。
+@Provides
+	在Module中，我们定义的方法是用这个注解，以此来告诉Dagger我们想要构造对象并提供
+这些依赖。
+@Inject
+	通常在需要依赖的地方使用这个注解。换句话说，你用它告诉Dagger这个类或者字段需要依赖注入。
+这样Dagger就会构造一个这个类的实例并满足他们的依赖。
+@Component
+	注入器，是＠Inject和＠Module的桥梁，它的主要作用就是连接这两个部分。将Module中产生的
+依赖对象自动注入到需要依赖实例的Container中。
+@Scope
+	Dagger２可以通过自定义注解限定注解作用域，来管理每个对象实例的生命周期。
+@Qualifier
+	当类的类型不足以鉴别一个依赖的时候，我们就可以使用这个注解标示。例如：在Android中，
+不同类型的context就可以定义qualifier注解@perApp和@perActivity，这样当注入一个context
+我们就可以告诉Dagger我们想要那个类型的context。
+
+@ActivityScoped
+@FragmentScoped
+@ContributesAndroidInjector
+
+@Component.Builder
+@BindsInstance
+@Binds
+
+
+
+@Documented
+@Retention
+
+@Singleton 			单例模式
+@Target
+@Nullable
+@NonNull
+@Named
+
+RetentionPolicy
+ElementType
+
+Lazy
+
+DaggerApplication
+DaggerAppCompatActivity
+DaggerFragment
