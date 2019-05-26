@@ -28,4 +28,8 @@
 26.HashMap原理
 27.Thread与HandlerThread区别
 28.Router路由
+29.UI 绘制原理
+30.音视频开发环境搭配，FFmpeg编译详解，webRTC通信
+31.dex加解密，7z压缩，webp应用，资源打包混淆
+32.Fullter 
 
